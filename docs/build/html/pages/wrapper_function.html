@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wrapper Functions &#8212; Nirschl et al Implementation 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-src.WrapperFunctions">
+<span id="wrapper-functions"></span><h1>Wrapper Functions<a class="headerlink" href="#module-src.WrapperFunctions" title="Permalink to this headline">¶</a></h1>
+<p>Wrapper Functions</p>
+<p>This script contains the methods which wrap the various methods provided by different libraries.
+These wrapper methods are written to facilitate future changes.</p>
+<p>created by Jalil Ahmed.</p>
+<dl class="py function">
+<dt id="src.WrapperFunctions.ceil">
+<code class="sig-prename descclassname">src.WrapperFunctions.</code><code class="sig-name descname">ceil</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">float_value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.WrapperFunctions.ceil" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the ceil value of a float</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>float_value</strong> (<em>float</em>) – Value whose ceil is to be returned</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Ceil value of the float</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.WrapperFunctions.choose_random">
+<code class="sig-prename descclassname">src.WrapperFunctions.</code><code class="sig-name descname">choose_random</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_list</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.WrapperFunctions.choose_random" title="Permalink to this definition">¶</a></dt>
+<dd><p>Choose a value from a list at random</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>input_list</strong> (<em>list</em>) – A list of values</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A single value from input list</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int or float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.WrapperFunctions.convert_color">
+<code class="sig-prename descclassname">src.WrapperFunctions.</code><code class="sig-name descname">convert_color</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">image</span></em>, <em class="sig-param"><span class="n">gray_scale_toggle</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.WrapperFunctions.convert_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the channels of images because CV2 library channels are BGR</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<em>numpy.ndarray</em>) – A numpy array of image with channel configuration BGR</p></li>
+<li><p><strong>gray_scale_toggle</strong> (<em>Bool</em>) – Toggle for grayscale output</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A numpy array of image with channel configuration RGB or Gray</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.WrapperFunctions.extract_patches">
+<code class="sig-prename descclassname">src.WrapperFunctions.</code><code class="sig-name descname">extract_patches</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">image</span></em>, <em class="sig-param"><span class="n">patch_size</span></em>, <em class="sig-param"><span class="n">num_patches</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.WrapperFunctions.extract_patches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Divide an image to patches</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<em>numpy.ndarray</em>) – Input image</p></li>
+<li><p><strong>patch_size</strong> (<em>int</em>) – Size of a patches</p></li>
+<li><p><strong>num_patches</strong> (<em>int</em>) – Number of patches to be extracted</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A numpy array containing patches of the image</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.WrapperFunctions.full">
+<code class="sig-prename descclassname">src.WrapperFunctions.</code><code class="sig-name descname">full</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">size</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.WrapperFunctions.full" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a numpy array filled with a constant value</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>size</strong> (<em>tuple</em>) – Size of numpy array</p></li>
+<li><p><strong>value</strong> (<em>int</em>) – Value to fill the numpy array</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A numpy array</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.WrapperFunctions.imread">
+<code class="sig-prename descclassname">src.WrapperFunctions.</code><code class="sig-name descname">imread</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">image_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.WrapperFunctions.imread" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read image from image path. This is a wrapper function of cv2.imread()</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>image_path</strong> (<em>str</em>) – Path of the image</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A numpy array of the image</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.WrapperFunctions.make_array">
+<code class="sig-prename descclassname">src.WrapperFunctions.</code><code class="sig-name descname">make_array</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_list</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.WrapperFunctions.make_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a list to numpy array</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>input_list</strong> (<em>list</em>) – A list</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A numpy array</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.WrapperFunctions.make_categorical">
+<code class="sig-prename descclassname">src.WrapperFunctions.</code><code class="sig-name descname">make_categorical</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">labels</span></em>, <em class="sig-param"><span class="n">num_classes</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.WrapperFunctions.make_categorical" title="Permalink to this definition">¶</a></dt>
+<dd><p>One hot encode an array of prediction labels. It is wrapper function to the to_categorical function in keras</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>labels</strong> (<em>numpy.ndarray</em>) – A numpy array of labels</p></li>
+<li><p><strong>num_classes</strong> (<em>int</em>) – Number of classes</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>One-hot encoded array of labels</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.WrapperFunctions.rotate_array">
+<code class="sig-prename descclassname">src.WrapperFunctions.</code><code class="sig-name descname">rotate_array</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_array</span></em>, <em class="sig-param"><span class="n">rotation_angle</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.WrapperFunctions.rotate_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper function of the scipy rotate function. This returns the array rotated with rotation angle
+at the default axis=1</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_array</strong> (<em>numpy.ndarray</em>) – A numpy array</p></li>
+<li><p><strong>rotation_angle</strong> (<em>int</em>) – Angle by which to rotate the array</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A numpy array</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.WrapperFunctions.shuffle_data">
+<code class="sig-prename descclassname">src.WrapperFunctions.</code><code class="sig-name descname">shuffle_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">images</span></em>, <em class="sig-param"><span class="n">labels</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.WrapperFunctions.shuffle_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to shuffle data i.e. images and labels. A wrapper function of sklearn.utils shuffle</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>images</strong> (<em>numpy.ndarray</em>) – A numpy array of images</p></li>
+<li><p><strong>labels</strong> (<em>numpy.ndarray</em>) – A numpy array of labels</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Shuffle images and labels</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(numpy.ndarray, numpy.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.WrapperFunctions.split_data">
+<code class="sig-prename descclassname">src.WrapperFunctions.</code><code class="sig-name descname">split_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">images</span></em>, <em class="sig-param"><span class="n">labels</span></em>, <em class="sig-param"><span class="n">test_size</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.WrapperFunctions.split_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>To split the data set into train and test sets stratified with labels.
+This is a wrapper function to sklearn.model_selection.train_test_split</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>images</strong> (<em>numpy.ndarray</em>) – Array of images</p></li>
+<li><p><strong>labels</strong> (<em>numpy.ndarray</em>) – Array of labels</p></li>
+<li><p><strong>test_size</strong> (<em>float</em>) – Size of the test set</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Train and test split of samples and labels</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(numpy.ndarray, numpy.ndarray, numpy.ndarray, numpy.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.WrapperFunctions.stack_vertical">
+<code class="sig-prename descclassname">src.WrapperFunctions.</code><code class="sig-name descname">stack_vertical</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_tuple</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.WrapperFunctions.stack_vertical" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vertically stack a tuple of numpy array</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>input_tuple</strong> (<em>(</em><em>numpy.ndarray</em><em>, </em><em>numpy.ndarray</em><em>)</em>) – A tuple containing numpy arrays</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A numpy array</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.WrapperFunctions.zeros">
+<code class="sig-prename descclassname">src.WrapperFunctions.</code><code class="sig-name descname">zeros</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">size</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.WrapperFunctions.zeros" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an numpy array with zeros of size</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>size</strong> (<em>tuple</em>) – Size of numpy array</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A numpy array with zeros</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Nirschl et al Implementation</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Jalil Ahmed.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/pages/wrapper_function.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

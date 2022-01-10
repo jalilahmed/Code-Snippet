@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Model &#8212; Nirschl et al Implementation 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Channel Average Layer" href="channel_average_layer.html" />
+    <link rel="prev" title="Trainer Script" href="trainer.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-src.Model">
+<span id="model"></span><h1>Model<a class="headerlink" href="#module-src.Model" title="Permalink to this headline">¶</a></h1>
+<p>Model</p>
+<p>This script implement the model architecture as published in the publication:</p>
+<p>A deep-learning classifier identifies patients with clinical heart failure using whole-slide images of H&amp;E tissue
+Nirschl JJ, Janowczyk A, Peyster EG, Frank R, Margulies KB, et al. (2018)
+PLOS ONE 13(4): e0192726. <a class="reference external" href="https://doi.org/10.1371/journal.pone.0192726">https://doi.org/10.1371/journal.pone.0192726</a></p>
+<p>created by Jalil Ahmed.</p>
+<dl class="py function">
+<dt id="src.Model.conv_block">
+<code class="sig-prename descclassname">src.Model.</code><code class="sig-name descname">conv_block</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_tensor</span></em>, <em class="sig-param"><span class="n">num_kernels</span></em>, <em class="sig-param"><span class="n">kernel_size</span></em>, <em class="sig-param"><span class="n">stride</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Model.conv_block" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a block of a Convolutional, Batch Normalization, and Activation function layers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_tensor</strong> (<em>tensorflow.Tensor</em>) – Input tensor of features</p></li>
+<li><p><strong>num_kernels</strong> (<em>int</em>) – Number of kernels in the convolutional layer</p></li>
+<li><p><strong>kernel_size</strong> (<em>int</em>) – Size of each kernel</p></li>
+<li><p><strong>stride</strong> (<em>int</em>) – Stride of the convolutional layer</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A tensorflow tensor</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tensorflow.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.Model.create_model">
+<code class="sig-prename descclassname">src.Model.</code><code class="sig-name descname">create_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_shape</span><span class="o">=</span><span class="default_value">64, 64, 3</span></em>, <em class="sig-param"><span class="n">num_classes</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">model_name</span><span class="o">=</span><span class="default_value">'MODEL_NAME'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Model.create_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a model based upon the architecture in the publication.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_shape</strong> (<em>(</em><em>int</em><em>, </em><em>int</em><em>, </em><em>int</em><em>)</em>) – Shape of the input image</p></li>
+<li><p><strong>num_classes</strong> (<em>int</em>) – (Default=2) Number of classes</p></li>
+<li><p><strong>model_name</strong> (<em>string</em>) – Name of the model</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Convolutional Neural Network</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tensorflow.keras.Model</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Nirschl et al Implementation</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Table of Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="trainer.html">Trainer Script</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="channel_average_layer.html">Channel Average Layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datagenerator.html">Data Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">Utility Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wrapper_function.html">Wrapper Functions</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="trainer.html" title="previous chapter">Trainer Script</a></li>
+      <li>Next: <a href="channel_average_layer.html" title="next chapter">Channel Average Layer</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Jalil Ahmed.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/pages/model.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
